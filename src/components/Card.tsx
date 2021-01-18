@@ -17,16 +17,19 @@ export default function Card() {
 
   console.log(users);
   return (
-    <div>
-      {users.map((user) => {
-        return (
-          <div key={user.id}>
-            <img src={user.avatar} alt='user' />
-            <h2>{user.first_name + " " + user.last_name}</h2>
-            <h3>{user.email}</h3>
-          </div>
-        );
-      })}
+    <div className=''>
+      <h1 className='text-4xl text-center m-5'>Our Users</h1>
+      <div className='grid grid-cols-3 gap-4'>
+        {users.map((user) => {
+          return (
+            <div key={user.id}>
+              <img src={user.avatar} alt='user' />
+              <h2>{user.first_name + " " + user.last_name}</h2>
+              <h3>{user.email}</h3>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
